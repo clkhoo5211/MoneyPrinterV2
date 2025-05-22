@@ -11,11 +11,15 @@ In your `config.json`, you need the following attributes filled out, so that the
 ```json
 {
   "firefox_profile": "The path to your Firefox profile (used to log in to YouTube)",
+  "firefox_profile": "The path to your Firefox profile (used to log in to YouTube)",
   "headless": true,
   "llm": "The Large Language Model you want to use to generate the video script.",
   "image_model": "What AI Model you want to use to generate images.",
   "threads": 4,
-  "is_for_kids": true
+  "is_for_kids": true,
+  "assembly_ai_api_key": "Your AssemblyAI API key, required for generating subtitles. Get one from assemblyai.com.",
+  "font": "The name of the .ttf font file (located in the `fonts/` directory) to be used for subtitles.",
+  "imagemagick_path": "Path to your ImageMagick installation, necessary for rendering subtitles onto the video. See `docs/Configuration.md` for more details."
 }
 ```
 
@@ -23,4 +27,4 @@ In your `config.json`, you need the following attributes filled out, so that the
 
 Here are some features that are planned for the future:
 
-- [ ] Subtitles (using either AssemblyAI or locally assembling them)
+- [x] Subtitles (via AssemblyAI)

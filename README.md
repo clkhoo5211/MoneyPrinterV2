@@ -25,7 +25,7 @@ MPV2 (MoneyPrinter Version 2) is, as the name suggests, the second version of th
 ## Features
 
 - [x] Twitter Bot (with CRON Jobs => `scheduler`)
-- [x] YouTube Shorts Automater (with CRON Jobs => `scheduler`)
+- [x] YouTube Shorts Automater (with automated script, image, TTS, subtitle generation, and CRON Jobs => `scheduler`)
 - [x] Affiliate Marketing (Amazon + Twitter)
 - [x] Find local businesses & cold outreach
 

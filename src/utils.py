@@ -102,9 +102,17 @@ def choose_random_song() -> str:
         str: The path to the chosen song.
     """
     try:
-        songs = os.listdir(os.path.join(ROOT_DIR, "Songs"))
+        songs_dir = os.path.join(ROOT_DIR, "Songs")
+        if not os.path.exists(songs_dir) or not os.listdir(songs_dir):
+            # If songs directory doesn't exist or is empty, return a dummy path
+            warning("Songs directory is empty or does not exist. Using dummy song path.")
+            return os.path.join(songs_dir, "dummy_song.mp3")
+        
+        songs = os.listdir(songs_dir)
         song = random.choice(songs)
         success(f" => Chose song: {song}")
-        return os.path.join(ROOT_DIR, "Songs", song)
+        return os.path.join(songs_dir, song)
     except Exception as e:
         error(f"Error occurred while choosing random song: {str(e)}")
+        # Return a dummy path in case of other errors
+        return os.path.join(ROOT_DIR, "Songs", "dummy_song.mp3")
